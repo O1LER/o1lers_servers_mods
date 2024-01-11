@@ -1,0 +1,278 @@
+{	
+"interface":{	
+	"description":"The level required to access interface settings."
+},
+"sunAzimuthOverride":{	
+	"description":"At what position on the horizon does the sun rise and set?"
+},
+"visibleDistance":{	
+	"description":"How far can we see?"
+},
+"objectEditorToggle":{	
+	"description":"While restricted, is object editor disabled?"
+},
+"defaultState":{	
+	"description":"The state of the interface for new players."
+},
+"dropSize":{	
+	"description":"What size are the drops of precipitation?"
+},
+"recover_vehicle":{	
+	"description":"While restricted, is vehicle recovery disabled?"
+},
+"occlusionScale":{	
+	"description":"How occluded is the sun lens flare?"
+},
+"moonElevation":{	
+	"description":"Vertical position of moon."
+},
+"gravity":{	
+	"description":"The level required to access gravity settings."
+},
+"reset_all_physics":{	
+	"description":"While restricted, is resetting all physics disabled?"
+},
+"loadHome":{	
+	"description":"While restricted, is loading Home disabled?"
+},
+"precipType":{	
+	"description":"What type of precipitation do we use?"
+},
+"sunLightBrightness":{	
+	"description":"How bright is the sunlight?"
+},
+"nametags":{	
+	"description":"The level required to access nametags settings."
+},
+"moonScale":{	
+	"description":"How big is the moon?"
+},
+"sunSize":{	
+	"description":"How big is the sun?"
+},
+"fogDensity":{	
+	"description":"How thicc is the fog?"
+},
+"toggleConsoleNG":{	
+	"description":"While restricted, is console disabled?"
+},
+"shadowSoftness":{	
+	"description":"How soft are the shadows?"
+},
+"weather":{	
+	"description":"The level required to access weather settings."
+},
+"cloudExposure":{	
+	"description":"How exposed are the clouds?"
+},
+"environmentAdmin":{	
+	"description":"The level required to access environment reset all."
+},
+"goto_checkpoint":{	
+	"description":"While restricted, is goto checkpoint disabled?"
+},
+"temperature":{	
+	"description":"The level required to access temperature settings."
+},
+"disabledMessage":{	
+	"description":"Message shown when resetting is completely disabled."
+},
+"restrictions":{	
+	"description":"The level required to access restrictions settings."
+},
+"dropMaxSpeed":{	
+	"description":"What is the maximum speed of precipitation?"
+},
+"reload_all_vehicles":{	
+	"description":"While restricted, is reloading all vehicles disabled?"
+},
+"extras":{	
+	"description":"The level required to access extras settings."
+},
+"reset_physics":{	
+	"description":"While restricted, is resetting physics disabled?"
+},
+"title":{	
+	"description":"Title shown when resetting is limited or disabled."
+},
+"timeout":{	
+	"description":"How often can a vehicle be reset (in seconds)?"
+},
+"playerPermissions":{	
+	"description":"The level required to access playerPermissions."
+},
+"reload_vehicle":{	
+	"description":"While restricted, is reloading vehicle disabled?"
+},
+"saveHome":{	
+	"description":"While restricted, is saving Home disabled?"
+},
+"shadowTexSize":{	
+	"description":"What is the texture resolution for shadows?"
+},
+"editorToggle":{	
+	"description":"While restricted, is editor disabled?"
+},
+"teleportTimeout":{	
+	"description":"How long between telports?"
+},
+"editorSafeModeToggle":{	
+	"description":"While restricted, is editor safe mode disabled?"
+},
+"message":{	
+	"description":"Message shown when resetting is limited."
+},
+"nodegrabberRender":{	
+	"description":"While restricted, is nodegrabber disabled?"
+},
+"control":{	
+	"description":"Are resets controlled?"
+},
+"dropPlayerAtCameraNoReset":{	
+	"description":"While restricted, is dropping player at camera with no reset disabled?"
+},
+"shadowSplits":{	
+	"description":"How many splits are there for shadows?"
+},
+"cobaltEssentials":{	
+	"description":"The level required to access CE settings."
+},
+"dayScale":{	
+	"description":"At what rate does daytime progress?"
+},
+"server":{	
+	"description":"The level required to access server settings."
+},
+"dropMinSpeed":{	
+	"description":"What is the minimum speed of precipitation?"
+},
+"tempCurveNoon":{	
+	"description":"What is the custom temperature in C at noon?"
+},
+"messageDuration":{	
+	"description":"How long does the toast show?"
+},
+"cloudCoverOne":{	
+	"description":"How thicc are the clouds?"
+},
+"tempCurveMidnight":{	
+	"description":"What is the custom temperature in C at midnight?"
+},
+"dropPlayerAtCamera":{	
+	"description":"While restricted, is dropping player at camera disabled?"
+},
+"race":{	
+	"description":"The level required to access race countdown."
+},
+"playerPermissionsPlus":{	
+	"description":"The level required to access more advanced playerPermissions."
+},
+"controlGravity":{	
+	"description":"Do we control everyone's gravity?"
+},
+"elapsedMessage":{	
+	"description":"Message shown when reset timeout has elapsed."
+},
+"tempCurveDawn":{	
+	"description":"What is the custom temperature in C at dawn?"
+},
+"fogAtmosphereHeight":{	
+	"description":"How high is the fog?"
+},
+"shadowDistance":{	
+	"description":"How far are the shadows?"
+},
+"cloudSpeedOne":{	
+	"description":"How fast are the clouds?"
+},
+"cloudCover":{	
+	"description":"How thicc are the clouds?"
+},
+"database":{	
+	"description":"The level required to access database settings."
+},
+"useTempCurve":{	
+	"description":"Do we use a custom temperature curve?"
+},
+"environment":{	
+	"description":"The level required to access environment settings."
+},
+"dayLength":{	
+	"description":"How long is the day?"
+},
+"exposure":{	
+	"description":"How exposed is the environment?"
+},
+"rainDrops":{	
+	"description":"How many rain drops are there?"
+},
+"skyBrightness":{	
+	"description":"How bright is the sky?"
+},
+"controlSun":{	
+	"description":"Do we control everyone's sun?"
+},
+"rayleighScattering":{	
+	"description":"How much rayleigh scattering?"
+},
+"timePlay":{	
+	"description":"Does time progress?"
+},
+"enabled":{	
+	"description":"Are resets allowed?"
+},
+"sun":{	
+	"description":"The level required to access sun settings."
+},
+"controlSimSpeed":{	
+	"description":"Do we control everyone's sim speed?"
+},
+"fogDensityOffset":{	
+	"description":"How far away is the fog?"
+},
+"cloudHeightOne":{	
+	"description":"How high are the clouds?"
+},
+"recover_to_last_road":{	
+	"description":"While restricted, is recover to last road disabled?"
+},
+"controlWeather":{	
+	"description":"Do we control everyone's weather?"
+},
+"recover_vehicle_alt":{	
+	"description":"While restricted, is alternate vehicle recovery disabled?"
+},
+"simSpeed":{	
+	"description":"At what rate does the simulation run?"
+},
+"cloudSpeed":{	
+	"description":"How fast are the clouds?"
+},
+"nightScale":{	
+	"description":"At what rate does nighttime progress?"
+},
+"config":{	
+	"description":"The level required to access config."
+},
+"tempCurveDusk":{	
+	"description":"What is the custom temperature in C at dusk?"
+},
+"cloudHeight":{	
+	"description":"How high are the clouds?"
+},
+"ToD":{	
+	"description":"What is the Time of Day?"
+},
+"flareScale":{	
+	"description":"How big is the sun lens flare?"
+},
+"shadowLogWeight":{	
+	"description":"How much does the log weigh?"
+},
+"cloudExposureOne":{	
+	"description":"How exposed are the clouds?"
+},
+"moonAzimuth":{	
+	"description":"Horizontal position of moon."
+}
+}

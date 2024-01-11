@@ -1,0 +1,77 @@
+{	
+"reload_all_vehicles":{	
+	"value":true
+},
+"title":{	
+	"value":"Vehicle Reset Limiter"
+},
+"reset_physics":{	
+	"value":true
+},
+"messageDuration":{	
+	"value":5
+},
+"editorToggle":{	
+	"value":false
+},
+"objectEditorToggle":{	
+	"value":false
+},
+"loadHome":{	
+	"value":true
+},
+"nodegrabberRender":{	
+	"value":false
+},
+"recover_vehicle":{	
+	"value":true
+},
+"reload_vehicle":{	
+	"value":true
+},
+"saveHome":{	
+	"value":true
+},
+"recover_to_last_road":{	
+	"value":true
+},
+"toggleConsoleNG":{	
+	"value":false
+},
+"recover_vehicle_alt":{	
+	"value":true
+},
+"goto_checkpoint":{	
+	"value":true
+},
+"dropPlayerAtCameraNoReset":{	
+	"value":true
+},
+"reset_all_physics":{	
+	"value":true
+},
+"control":{	
+	"value":false
+},
+"dropPlayerAtCamera":{	
+	"value":true
+},
+"editorSafeModeToggle":{	
+	"value":false
+},
+"disabledMessage":{	
+	"value":"Vehicle resetting is disabled on this server."
+},
+"timeout":{	
+	"value":10
+},
+"elapsedMessage":{	
+	"value":"You can now reset your vehicle."
+},
+"enabled":{	
+	"value":true
+},
+"message":{	
+	"value":"You can reset your vehicle in {secondsLeft} seconds."
+}
+}

@@ -1,0 +1,320 @@
+{	
+"roamer":{	
+	"level":1
+},
+"woodcrate":{	
+	"level":2
+},
+"testroller":{	
+	"level":2
+},
+"wigeon":{	
+	"level":1
+},
+"tv":{	
+	"level":2
+},
+"legran":{	
+	"level":1
+},
+"midsize":{	
+	"level":1
+},
+"us_semi":{	
+	"partlevel:us_semi_ramplow":2,
+	"level":1
+},
+"lansdale":{	
+	"level":1
+},
+"racetruck":{	
+	"level":1
+},
+"christmas_tree":{	
+	"level":2
+},
+"trafficbarrel":{	
+	"level":2
+},
+"weightpad":{	
+	"level":2
+},
+"blockwall":{	
+	"level":2
+},
+"barstow":{	
+	"level":1
+},
+"large_hamster_wheel":{	
+	"level":2
+},
+"etk800":{	
+	"level":1
+},
+"porta_potty_base":{	
+	"level":2
+},
+"tirewall":{	
+	"level":2
+},
+"tube":{	
+	"level":2
+},
+"large_spinner":{	
+	"level":2
+},
+"barrier":{	
+	"level":2
+},
+"cannon":{	
+	"level":2
+},
+"bastion":{	
+	"level":1
+},
+"porta_potty":{	
+	"level":1
+},
+"burnside":{	
+	"level":1
+},
+"sawhorse":{	
+	"level":2
+},
+"autobello":{	
+	"level":1
+},
+"unicycle":{	
+	"level":1
+},
+"boxutility":{	
+	"level":1
+},
+"covet":{	
+	"level":1
+},
+"etki":{	
+	"level":1
+},
+"delineator":{	
+	"level":2
+},
+"flatbed":{	
+	"level":1
+},
+"fullsize":{	
+	"level":1
+},
+"rockbouncer":{	
+	"level":1
+},
+"large_tire":{	
+	"level":2
+},
+"pickup":{	
+	"level":1
+},
+"scintilla":{	
+	"level":1
+},
+"barrels":{	
+	"level":2
+},
+"pessima":{	
+	"level":1
+},
+"fridge":{	
+	"level":2
+},
+"haybale":{	
+	"level":2
+},
+"metal_ramp":{	
+	"level":2
+},
+"caravan":{	
+	"level":1
+},
+"mattress":{	
+	"level":2
+},
+"coupe":{	
+	"level":1
+},
+"boxutility_large":{	
+	"level":1
+},
+"bolide":{	
+	"level":1
+},
+"cones":{	
+	"level":2
+},
+"engine_props":{	
+	"level":2
+},
+"large_bridge":{	
+	"level":2
+},
+"rocks":{	
+	"level":2
+},
+"large_cannon":{	
+	"level":2
+},
+"default":{	
+	"level":2
+},
+"kickplate":{	
+	"level":2
+},
+"tub":{	
+	"level":2
+},
+"inflated_mat":{	
+	"level":2
+},
+"large_angletester":{	
+	"level":2
+},
+"vivace":{	
+	"level":1
+},
+"hopper":{	
+	"level":1
+},
+"couch":{	
+	"level":2
+},
+"tirestacks":{	
+	"level":2
+},
+"ball":{	
+	"level":2
+},
+"cardboard_box":{	
+	"level":2
+},
+"atv":{	
+	"level":1
+},
+"bluebuck":{	
+	"level":1
+},
+"miramar":{	
+	"level":1
+},
+"large_roller":{	
+	"level":2
+},
+"woodplanks":{	
+	"level":2
+},
+"midtruck":{	
+	"level":1
+},
+"roadsigns":{	
+	"level":2
+},
+"rollover":{	
+	"level":2
+},
+"bollard":{	
+	"level":2
+},
+"tanker":{	
+	"level":1
+},
+"sbr":{	
+	"level":1
+},
+"shipping_container":{	
+	"level":2
+},
+"sunburst":{	
+	"level":1
+},
+"citybus":{	
+	"partlevel:citybus_jato_R":2,
+	"partlevel:citybus_ramplow":2,
+	"level":1
+},
+"moonhawk":{	
+	"level":1
+},
+"etkc":{	
+	"level":1
+},
+"suspensionbridge":{	
+	"level":2
+},
+"van":{	
+	"level":1
+},
+"wendover":{	
+	"level":1
+},
+"streetlight":{	
+	"level":2
+},
+"large_tilt":{	
+	"level":2
+},
+"flipramp":{	
+	"level":2
+},
+"dryvan":{	
+	"level":1
+},
+"piano":{	
+	"level":2
+},
+"drag_tree":{	
+	"level":2
+},
+"wall":{	
+	"level":2
+},
+"large_crusher":{	
+	"level":2
+},
+"barrier_plastic":{	
+	"level":2
+},
+"chair":{	
+	"level":2
+},
+"flail":{	
+	"level":2
+},
+"metal_box":{	
+	"level":2
+},
+"pigeon":{	
+	"level":1
+},
+"tsfb":{	
+	"level":1
+},
+"utv":{	
+	"level":1
+},
+"cargotrailer":{	
+	"level":1
+},
+"tiltdeck":{	
+	"level":1
+},
+"containerTrailer":{	
+	"level":1
+},
+"dolly":{	
+	"level":1
+},
+"frameless_dump":{	
+	"level":1
+},
+"gate":{	
+	"level":2
+}
+}

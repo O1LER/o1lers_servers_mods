@@ -1,0 +1,152 @@
+{	
+"gravity":{	
+	"value":-9.81
+},
+"cloudSpeedOne":{	
+	"value":0.2
+},
+"dayLength":{	
+	"value":1800
+},
+"visibleDistance":{	
+	"value":8000
+},
+"occlusionScale":{	
+	"value":0.025
+},
+"dayScale":{	
+	"value":1
+},
+"flareScale":{	
+	"value":5
+},
+"moonAzimuth":{	
+	"value":0.0
+},
+"tempCurveNoon":{	
+	"value":38
+},
+"exposure":{	
+	"value":1
+},
+"cloudCoverOne":{	
+	"value":0.2
+},
+"fogDensity":{	
+	"value":0.001
+},
+"sunLightBrightness":{	
+	"value":1
+},
+"cloudSpeed":{	
+	"value":0.2
+},
+"cloudExposure":{	
+	"value":1.4
+},
+"cloudHeight":{	
+	"value":2.5
+},
+"controlWeather":{	
+	"value":false
+},
+"shadowTexSize":{	
+	"value":1024
+},
+"shadowDistance":{	
+	"value":1600
+},
+"tempCurveMidnight":{	
+	"value":-15
+},
+"shadowLogWeight":{	
+	"value":0.98
+},
+"useTempCurve":{	
+	"value":false
+},
+"sunSize":{	
+	"value":1
+},
+"teleportTimeout":{	
+	"value":5
+},
+"skyBrightness":{	
+	"value":40
+},
+"tempCurveDusk":{	
+	"value":12
+},
+"cloudHeightOne":{	
+	"value":5
+},
+"ToD":{	
+	"value":0.125
+},
+"controlSun":{	
+	"value":false
+},
+"fogDensityOffset":{	
+	"value":8.0
+},
+"fogAtmosphereHeight":{	
+	"value":400
+},
+"simSpeed":{	
+	"value":1
+},
+"nightScale":{	
+	"value":2
+},
+"cloudExposureOne":{	
+	"value":1.6
+},
+"timePlay":{	
+	"value":false
+},
+"precipType":{	
+	"value":"rain_medium"
+},
+"controlGravity":{	
+	"value":false
+},
+"dropMaxSpeed":{	
+	"value":0.2
+},
+"moonElevation":{	
+	"value":45
+},
+"cloudCover":{	
+	"value":0.2
+},
+"moonScale":{	
+	"value":0.03
+},
+"tempCurveDawn":{	
+	"value":12
+},
+"rayleighScattering":{	
+	"value":0.003
+},
+"controlSimSpeed":{	
+	"value":false
+},
+"shadowSplits":{	
+	"value":4
+},
+"shadowSoftness":{	
+	"value":0.2
+},
+"sunAzimuthOverride":{	
+	"value":0.0
+},
+"dropSize":{	
+	"value":1
+},
+"dropMinSpeed":{	
+	"value":0.1
+},
+"rainDrops":{	
+	"value":0
+}
+}

@@ -1,0 +1,163 @@
+{	
+"setcfg":{	
+	"originModule":"CC",
+	"level":5,
+	"sourceLimited":0,
+	"description":"Set a vanilla beamMP server config option",
+	"arguments":["option", "value"]
+},
+"CEI":{	
+	"originModule":"CEI",
+	"level":0,
+	"sourceLimited":1,
+	"description":"Toggles Cobalt Essentials Interface",
+	"arguments":0
+},
+"ban":{	
+	"originModule":"CC",
+	"level":10,
+	"sourceLimited":0,
+	"description":"Ban a player from the server",
+	"arguments":["player", "*reason"]
+},
+"reload":{	
+	"originModule":"CC",
+	"level":10,
+	"sourceLimited":0,
+	"description":"Reload the given Cobalt Extension",
+	"arguments":["extension"]
+},
+"setgroup":{	
+	"originModule":"CC",
+	"level":10,
+	"sourceLimited":0,
+	"description":"Set a player's permission group",
+	"arguments":["player", "value"]
+},
+"setperm":{	
+	"originModule":"CC",
+	"level":10,
+	"sourceLimited":0,
+	"description":"Set a player's permission level",
+	"arguments":["player", "value"]
+},
+"say":{	
+	"originModule":"CC",
+	"level":5,
+	"sourceLimited":0,
+	"description":"Say a message as the server",
+	"arguments":["message"]
+},
+"status":{	
+	"originModule":"CC",
+	"level":0,
+	"sourceLimited":0,
+	"description":"Lists all the players on the server with their ids and basic information on the server",
+	"arguments":0
+},
+"connected":{	
+	"originModule":"CC",
+	"level":0,
+	"sourceLimited":0,
+	"description":"Get the connection state of all players on the server",
+	"arguments":0
+},
+"cei":{	
+	"originModule":"CEI",
+	"level":0,
+	"sourceLimited":1,
+	"description":"Alias for CEI",
+	"arguments":0
+},
+"countdown":{	
+	"originModule":"CC",
+	"level":1,
+	"sourceLimited":0,
+	"description":"Start a countdown in chat",
+	"arguments":0
+},
+"about":{	
+	"originModule":"CC",
+	"level":0,
+	"sourceLimited":0,
+	"description":"Displays the license, version, and copyright notice associated with Cobalt Essentials",
+	"arguments":0
+},
+"lua":{	
+	"originModule":"CC",
+	"level":10,
+	"sourceLimited":2,
+	"description":"Execute Lua, return the desired reply",
+	"arguments":["command"]
+},
+"help":{	
+	"originModule":"CC",
+	"level":0,
+	"sourceLimited":0,
+	"description":"Lists all commands accessible by the player",
+	"arguments":["*command"]
+},
+"whitelist":{	
+	"originModule":"CC",
+	"level":5,
+	"sourceLimited":0,
+	"description":"Control the server's whitelist",
+	"arguments":["subcommand"]
+},
+"statusdetail":{	
+	"originModule":"CC",
+	"level":0,
+	"sourceLimited":0,
+	"description":"Lists all the players on the server in detail along with basic server information",
+	"arguments":0
+},
+"unban":{	
+	"originModule":"CC",
+	"level":10,
+	"sourceLimited":0,
+	"description":"Unban a player from the server",
+	"arguments":["player"]
+},
+"uptime":{	
+	"originModule":"CC",
+	"level":0,
+	"sourceLimited":0,
+	"description":"Get the uptime of the server",
+	"arguments":0
+},
+"kick":{	
+	"originModule":"CC",
+	"level":5,
+	"sourceLimited":0,
+	"description":"Kick a player from the session",
+	"arguments":["player", "*reason"]
+},
+"unmute":{	
+	"originModule":"CC",
+	"level":5,
+	"sourceLimited":0,
+	"description":"Allow a muted player to talk again",
+	"arguments":["player"]
+},
+"togglechat":{	
+	"originModule":"CC",
+	"level":10,
+	"sourceLimited":2,
+	"description":"Toggles viewing chat in the RCON client",
+	"arguments":0
+},
+"mute":{	
+	"originModule":"CC",
+	"level":5,
+	"sourceLimited":0,
+	"description":"Disallow a player from talking",
+	"arguments":["player", "*reason"]
+},
+"stop":{	
+	"originModule":"CC",
+	"level":10,
+	"sourceLimited":0,
+	"description":"Stops the server",
+	"arguments":0
+}
+}

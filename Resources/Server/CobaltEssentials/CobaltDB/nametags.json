@@ -1,0 +1,11 @@
+{	
+"blockingEnabled":{	
+	"value":false
+},
+"blockingTimeout":{	
+	"value":300
+},
+"nametagsWhitelist":{	
+	"exampleName":"exampleName"
+}
+}

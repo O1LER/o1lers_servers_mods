@@ -1,0 +1,65 @@
+{	
+"tinzman":{	
+	"banned":true,
+	"banReason":"You've been banned from this server."
+},
+"group:guest":{	
+	"UI":0,
+	"banReason":"You must be signed in to join this server",
+	"level":1,
+	"muted":false,
+	"banned":true,
+	"whitelisted":false
+},
+"group:default":{	
+	"UI":1,
+	"level":1,
+	"muted":false,
+	"banned":false,
+	"whitelisted":false
+},
+"group:inactive":{	
+	"level":0,
+	"UI":0
+},
+"Hapern":{	
+	"banned":true,
+	"banReason":"You've been banned from this server."
+},
+"group:owner":{	
+	"UI":4,
+	"level":11,
+	"muted":false,
+	"banned":false,
+	"whitelisted":true
+},
+"taanieltina2007":{	
+	"banned":true,
+	"banReason":"You've been banned from this server."
+},
+"O1LER":{	
+	"group":"owner"
+},
+"group:mod":{	
+	"UI":2,
+	"level":5,
+	"muted":false,
+	"banned":false,
+	"whitelisted":true
+},
+"group:admin":{	
+	"UI":3,
+	"level":10,
+	"muted":false,
+	"banned":false,
+	"whitelisted":true
+},
+"mustang2048":{	
+	"banned":true,
+	"banReason":"You've been banned from this server."
+},
+"Rainbowus69420":{	
+	"banned":true,
+	"banReason":"You've been banned from this server."
+}
+}

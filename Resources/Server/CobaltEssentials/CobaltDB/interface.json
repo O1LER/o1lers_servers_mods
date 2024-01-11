@@ -1,0 +1,56 @@
+{	
+"database":{	
+	"value":3
+},
+"interface":{	
+	"value":3
+},
+"extras":{	
+	"value":3
+},
+"environmentAdmin":{	
+	"value":3
+},
+"weather":{	
+	"value":2
+},
+"restrictions":{	
+	"value":3
+},
+"playerPermissionsPlus":{	
+	"value":3
+},
+"config":{	
+	"value":2
+},
+"sun":{	
+	"value":2
+},
+"defaultState":{	
+	"value":true
+},
+"race":{	
+	"value":2
+},
+"cobaltEssentials":{	
+	"value":3
+},
+"environment":{	
+	"value":2
+},
+"playerPermissions":{	
+	"value":2
+},
+"nametags":{	
+	"value":2
+},
+"gravity":{	
+	"value":2
+},
+"server":{	
+	"value":3
+},
+"temperature":{	
+	"value":2
+}
+}
