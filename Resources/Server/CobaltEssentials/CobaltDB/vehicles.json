@@ -314,6 +314,15 @@
 "frameless_dump":{	
 	"level":1
 },
+"log_triler":{	
+	"level":1
+},
+"logs":{	
+	"level":2
+},
+"stee_coil":{	
+	"level":2
+},
 "gate":{	
 	"level":2
 }
