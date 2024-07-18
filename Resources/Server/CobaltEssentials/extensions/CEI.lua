@@ -4,7 +4,7 @@ local M = {}
 
 M.COBALT_VERSION = "1.7.6"
 
-local CEI_VERSION = "0.7.98"
+local CEI_VERSION = "0.7.100"
 
 utils.setLogType("CEI",93)
 
@@ -30,6 +30,8 @@ local tempPCV = {}
 local logTimer = 0
 local logInterval = 30
 
+local commandPrefix = config.commandPrefix.value
+
 local config = {}
 
 config.server = {}
@@ -48,6 +50,7 @@ config.cobalt.permissions.tempSpawnPerms = {}
 config.cobalt.permissions.tempSpawnToggle = false
 
 config.cobalt.interface = {}
+config.cobalt.interface.welcome_default = true
 config.cobalt.interface.defaultState_default = true
 config.cobalt.interface.playerPermissions_default = 2
 config.cobalt.interface.playerPermissionsPlus_default = 3
@@ -162,6 +165,7 @@ local environment = {}
 
 local descriptions = {
 	interface = {
+		welcome = "Do we show a CEI welcome message on server join?",
 		defaultState = "The state of the interface for new players.",
 		playerPermissions = "The level required to access playerPermissions.",
 		playerPermissionsPlus = "The level required to access more advanced playerPermissions.",
@@ -267,7 +271,15 @@ local descriptions = {
 	}
 }
 
-local environmentJson = CobaltDB.new("environment")
+local environmentJson, databaseLoaderInfo = CobaltDB.new("environment")
+
+if databaseLoaderInfo == "error" then
+	CElog("Environment Database corrupted. Resetting Environment!", "CEI")
+	local filePath = pluginPath .. "/CobaltDB/environment.json"
+	utils.writeJson(filePath, {})
+	environmentJson, databaseLoaderInfo = CobaltDB.new("environment")
+end
+
 local defaultEnvironmentValues = {
 	controlSun = 			{value = environmentDefaults.controlSun},
 	ToD = 					{value = environmentDefaults.ToD},
@@ -402,6 +414,7 @@ local defaultDescriptions = {
 	objectEditorToggle = 	{description = descriptions.restrictions.objectEditorToggle},
 	nodegrabberRender = 	{description = descriptions.restrictions.nodegrabberRender},
 	
+	welcome = 				{description = descriptions.interface.welcome},
 	defaultState = 			{description = descriptions.interface.defaultState},
 	playerPermissions = 	{description = descriptions.interface.playerPermissions},
 	playerPermissionsPlus = {description = descriptions.interface.playerPermissionsPlus},
@@ -572,6 +585,7 @@ local defaultNametagsSettings = {
 
 local interfaceJson = CobaltDB.new("interface")
 local defaultInterfaceSettings = {
+	welcome = 				{value = config.cobalt.interface.welcome_default},
 	defaultState = 			{value = config.cobalt.interface.defaultState_default},
 	playerPermissions = 	{value = config.cobalt.interface.playerPermissions_default},
 	playerPermissionsPlus = {value = config.cobalt.interface.playerPermissionsPlus_default},
@@ -677,6 +691,7 @@ local function onInit()
 
 	MP.RegisterEvent("requestCEISync","requestCEISync")
 	
+	MP.RegisterEvent("CEISetWelcome","CEISetWelcome")
 	MP.RegisterEvent("CEISetDefaultState","CEISetDefaultState")
 	MP.RegisterEvent("CEISetCurVeh","CEISetCurVeh")
 	MP.RegisterEvent("CEIPreRace","CEIPreRace")
@@ -733,6 +748,7 @@ local function onInit()
 	MP.RegisterEvent("CEISetResetPerm","CEISetResetPerm")
 	MP.RegisterEvent("CEITeleportFrom","CEITeleportFrom")
 	MP.RegisterEvent("CEIRaceInclude","CEIRaceInclude")
+	MP.RegisterEvent("CEISetUserUIScale","CEISetUserUIScale")
 	
 	MP.RegisterEvent("txNametagBlockerTimeout","txNametagBlockerTimeout")
 	
@@ -797,6 +813,7 @@ local function onInit()
 	
 	config.cobalt.voteKick.kickPercent = CobaltDB.query("voteKick", "kickPercent", "value")
 	
+	config.cobalt.interface.welcome = CobaltDB.query("interface", "welcome", "value")
 	config.cobalt.interface.defaultState = CobaltDB.query("interface", "defaultState", "value")
 	config.cobalt.interface.config = CobaltDB.query("interface", "config", "value")
 	config.cobalt.interface.playerPermissions = CobaltDB.query("interface", "playerPermissions", "value")
@@ -933,7 +950,10 @@ local function txPlayersGroup(player)
 end
 
 local function txPlayersUIPerm(player)
-	MP.TriggerClientEvent(player.playerID, "rxPlayersUIPerm", tostring(player.permissions.UI))
+	local data = {}
+	data.currentUIPerm = player.permissions.UI
+	data.CEIScale = tempPlayers[player.name].uiScale
+	MP.TriggerClientEventJson(player.playerID, "rxPlayersUIPerm", data)
 end
 
 function txPlayersDatabase(now)
@@ -1038,11 +1058,13 @@ local function txPlayersData()
 				playersTable[player.playerID].tempPermLevel = tempPlayers[player.name].tempPermLevel
 				playersTable[player.playerID].tempUIPermLevel = tempPlayers[player.name].tempUIPermLevel
 				playersTable[player.playerID].includeInRace = tempPlayers[player.name].includeInRace
+				playersTable[player.playerID].uiScale = tempPlayers[player.name].uiScale
 			else
 				playersTable[player.playerID].tempBanLength = 0
 				playersTable[player.playerID].tempPermLevel = 1
 				playersTable[player.playerID].tempUIPermLevel = 1
 				playersTable[player.playerID].includeInRace = false
+				playersTable[player.playerID].uiScale = 1
 			end
 			for k in pairs(playersTable[player.playerID].vehicles) do
 				playersTable[player.playerID].vehicles[k].vehicleID = k
@@ -1060,7 +1082,7 @@ local function txPlayersData()
 end
 
 local function theConfigData()
-	config.cobalt.maxActivePlayers = tostring(CobaltDB.query("config", "maxActivePlayers", "value"))
+	config.cobalt.maxActivePlayers = CobaltDB.query("config", "maxActivePlayers", "value")
 	config.cobalt.enableWhitelist = CobaltDB.query("config", "enableWhitelist", "value")
 	local playerGroupsLength = 0
 	local whitelistLength = 0
@@ -1213,6 +1235,14 @@ function CEISetDefaultState(senderID, data)
 		data = Util.JsonDecode(data)
 		CobaltDB.set("interface", "defaultState", "value", data[1])
 		config.cobalt.interface.defaultState = data[1]
+	end
+end
+
+function CEISetWelcome(senderID, data)
+	if players[senderID].permissions.group == "admin" or players[senderID].permissions.group == "owner" or players[senderID].permissions.UI >= config.cobalt.interface.cobaltEssentials then
+		data = Util.JsonDecode(data)
+		CobaltDB.set("interface", "welcome", "value", data[1])
+		config.cobalt.interface.welcome = data[1]
 	end
 end
 
@@ -2208,6 +2238,15 @@ function CEIRaceInclude(senderID, data)
 	end
 end
 
+function CEISetUserUIScale(senderID, data)
+	local playerName = players[senderID].name
+	local player = players.getPlayerByName(playerName)
+	if player then
+		CobaltDB.set("playersDB/" .. playerName, "uiScale", "value", data)
+		tempPlayers[player.name].uiScale = data
+	end
+end
+
 function CEISetNametagWhitelist(senderID, data)
 	if players[senderID].permissions.group == "admin" or players[senderID].permissions.group == "owner" or players[senderID].permissions.group == "mod" or players[senderID].permissions.UI >= config.cobalt.interface.playerPermissions then
 		data = Util.JsonDecode(data)
@@ -2441,20 +2480,27 @@ local function sendDelayedMessage(player, message)
 	end
 end
 
+local function onPlayerAuth(player)
+	tempPlayers[player.name] = {}
+	tempPlayers[player.name].tempPermLevel = 0
+	tempPlayers[player.name].tempUIPermLevel = 1
+	tempPlayers[player.name].tempBanLength = 1
+	tempPlayers[player.name].includeInRace = false
+	tempPlayers[player.name].uiScale = 1
+	tempPlayers[player.name].votedFor = {}
+	tempPlayers[player.name].tempPermLevel = player.permissions.level
+	tempPCV[player.name] = "none"
+end
+
 local function onPlayerJoining(player)
 	if player then
+		tempPlayers[player.name].player_id = player.playerID
 		local identifiers = MP.GetPlayerIdentifiers(player.playerID)
 		if CobaltDB.query("playersDB/" .. player.name, "tempBan", "value") == nil or CobaltDB.query("playersDB/" .. player.name, "tempBan", "value") == 0 then
 		elseif CobaltDB.query("playersDB/" .. player.name, "tempBan", "value") > os.time() then
 			return false
 		end
-		tempPlayers[player.name] = {}
-		tempPlayers[player.name].tempPermLevel = 0
-		tempPlayers[player.name].tempUIPermLevel = 1
-		tempPlayers[player.name].tempBanLength = 1
-		tempPlayers[player.name].includeInRace = false
-		tempPlayers[player.name].votedFor = {}
-		tempPCV[player.name] = "none"
+
 		if player.isGuest then
 			identifiers.beammp = tonumber(player.name:sub(6)) * -1
 		end
@@ -2480,13 +2526,19 @@ local function onPlayerJoining(player)
 				return reason
 			end
 		end
-		tempPlayers[player.name].tempPermLevel = player.permissions.level
+		if CobaltDB.query("playersDB/" .. player.name, "uiScale", "value") == nil then
+			CobaltDB.set("playersDB/" .. player.name, "uiScale", "value", 1)
+			tempPlayers[player.name].uiScale = 1
+		else
+			tempPlayers[player.name].uiScale = CobaltDB.query("playersDB/" .. player.name, "uiScale", "value")
+		end
+		
 		if player.permissions.UI then
 			tempPlayers[player.name].tempUIPermLevel = player.permissions.UI
 		else
 			CobaltDB.set("playersDB/" .. player.name, "UI", "value", 1)
 		end
-		tempPlayers[player.name].player_id = player.playerID
+		
 		if CobaltDB.query("playersDB/" .. player.name, "showCEI", "value") == nil then
 			CobaltDB.set("playersDB/" .. player.name, "showCEI", "value", config.cobalt.interface.defaultState)
 			showCEI[player.name] = config.cobalt.interface.defaultState
@@ -2533,8 +2585,10 @@ function requestCEISync(player_id)
 		MP.TriggerClientEvent(-1, "rxInputUpdate", "config")
 		MP.TriggerClientEvent(-1, "rxInputUpdate", "players")
 		MP.TriggerClientEvent(-1, "rxInputUpdate", "playersDatabase")
-		CE.delayExec( 5000 , sendDelayedMessage , { player , "This server uses Cobalt Essentials Interface." } )
-		CE.delayExec( 6000 , sendDelayedMessage , { player , "Use /CEI or /cei in chat to toggle." } )
+		if config.cobalt.interface.welcome then
+			CE.delayExec( 5000 , sendDelayedMessage , { player , "This server uses Cobalt Essentials Interface." } )
+			CE.delayExec( 6000 , sendDelayedMessage , { player , "Use " .. commandPrefix .. "CEI or " .. commandPrefix .. "cei in chat to toggle." } )
+		end
 	end
 end
 
@@ -2575,6 +2629,7 @@ M.onInit = onInit
 M.onTick = onTick
 
 M.onPlayerJoining = onPlayerJoining
+M.onPlayerAuth = onPlayerAuth
 
 M.onPlayerDisconnect = onPlayerDisconnect
 M.onVehicleSpawn = onVehicleSpawn
